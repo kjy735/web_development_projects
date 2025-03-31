@@ -29,7 +29,7 @@
 }
 
 /* 회사마다 고유의 방식이 있는 코드인듯 */
-.ally-hidden {
+.a11y-hidden {
     clip: rect(1px, 1px, 1px, 1px);
     -webkit-clip-path: inset(50%);
     clip-path: inset(50%);
@@ -62,8 +62,43 @@ h1 {
     justify-content: center;
 }
 
-h1.img_clock {
+/* 띄어쓰기가 영향을 미침 */
+h1 .img_clock { 
     width: 265px;
+}
+
+h1 .img_title {
+    position: absolute;
+    width: 564px;
+    top: 120px;
+}
+
+/* 1만시간의 법칙 설명 */
+.intro_saying {
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 36px;
+    color: #F5DF4D;
+    margin-bottom: 50px ;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quotes {
+    position: absolute;
+}
+
+.explain {
+    text-align: center;
+    line-height: 1.7;
+}
+
+.explain strong {
+    font-family: 'GmarketSansBold';
+    font-size: 20px;
 }
 
 
