@@ -4,6 +4,7 @@ import { DataGrid, GridColDef, GridCellParams } from "@mui/x-data-grid"; // 데�
 import { Snackbar } from '@mui/material';
 import { useState } from "react";
 import AddCar from "./AddCar";
+import EditCar from "./EditCar";
 
 function Carlist() {
   const [open, setOpen] = useState(false);
@@ -35,6 +36,14 @@ function Carlist() {
       field: 'edit',
       headerName: '',
       width: 90,
+      disableColumnMenu: true,
+      renderCell: (params: GridCellParams) =>
+        <EditCar cardata={params.row} />
+    },
+    {
+      field: 'delete',
+      headerName: '',
+      width: 90,
       sortable: false,
       filterable: false,
       disableColumnMenu: true,
@@ -43,7 +52,7 @@ function Carlist() {
           if(window.confirm(`${params.row.brand}의 ${params.row.model}을 삭제하시겠습니까?`)) {
             mutate(params.row._links.car.href)
           }
-        }}>삭제</button>
+        }}>삭제❌</button>
     }
   ]
 
